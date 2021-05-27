@@ -1210,20 +1210,22 @@ class _DropdownDialogState<T> extends State<DropdownDialog> {
                 context: context,
                 updateParent: widget.updateParent,
                 stringToWidgetFunction: (string) {
-                return (TextButton.icon(
+                return (FlatButton.icon(
                     onPressed: !valid
                         ? null
                         : () {
                             pop();
                             setState(() {});
                           },
-                    icon: Icon(Icons.close),
+                    icon: Icon(Icons.done_all,color: Colors.white),
                     label: Text(
                       string,
+                        style: TextStyle(color: Colors.white),
                       textDirection: widget.rightToLeft
                           ? TextDirection.rtl
                           : TextDirection.ltr,
-                    )));
+                    ))
+                    );
               })
             : SizedBox.shrink();
     return widget.hint != null
