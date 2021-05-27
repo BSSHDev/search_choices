@@ -1216,8 +1216,7 @@ class _DropdownDialogState<T> extends State<DropdownDialog> {
                         : () {
                             pop();
                             setState(() {});
-                          },
-                    icon: Icon(Icons.done_all,color: Colors.white),
+                          }
                     color: Color(0xFFBE1F28),
                     label: Text(
                       string,
