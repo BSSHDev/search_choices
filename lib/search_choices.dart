@@ -796,12 +796,13 @@ class _SearchChoicesState<T> extends State<SearchChoices<T>> {
     List<Widget> list = [];
     selectedItems?.forEach((item) {
       list.add(widget.selectedValueWidgetFn != null
-          ? widget.selectedValueWidgetFn!(widget.items[item].value)
+          ? Flexible(child:widget.selectedValueWidgetFn!(widget.items[item].value)
           : Flexible(child:items[item]));
     });
     if (list.isEmpty && hintIndex != null) {
       innerItemsWidget = items[hintIndex];
     } else {
+      print('get selected item');
       innerItemsWidget = widget.selectedAggregateWidgetFn != null
           ? widget.selectedAggregateWidgetFn!(list)
           : Column(
